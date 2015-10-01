@@ -1,0 +1,12 @@
+module.exports = function Route(app, Mongoose){
+	// first we will establish our errors
+	var errors_array = [];
+	//root route 
+	app.get('/mongoose', function(req, res){
+		Mongoose.find({}, function(err, errors){
+			res.render('index', {errors: errors_array});
+		})
+	})
+
+
+}
